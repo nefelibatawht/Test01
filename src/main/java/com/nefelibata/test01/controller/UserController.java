@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ import java.util.Map;
         @Autowired
         private UserService service;
         @RequestMapping(value = "/register",method = RequestMethod.POST)
-        public Response register(@RequestBody Map<String, String> person){
+        public Response register(@RequestBody Map<String, String> person){//使用泛型实现一一对应
             String username = person.get("username");
             int password = Integer.parseInt(person.get("password"));
             String phone = person.get("phone");
